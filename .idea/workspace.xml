@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff2a38d3-15e1-4f37-8f07-c78456d2c8a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/core/graph_builder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/llm_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/validator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/nodes/summarizer_node.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/nodes/validator_node.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/summary_schema.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/__int__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nodes/__int__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/llm_client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/summarizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/summarizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/test_basic_summary.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/agent_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/llm_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/llm_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nodes/summarizer_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nodes/summarizer_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nodes/validator_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nodes/validator_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/agent_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/agent_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,19 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.agent_service.executor": "Run",
-    "Python.huggingface_endpoint.executor": "Run",
-    "Python.llm_client.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.summarizer.executor": "Run",
-    "Python.summarizer_node.executor": "Run",
-    "Python.test_basic_summary.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.agent_service.executor&quot;: &quot;Run&quot;,
+    &quot;Python.huggingface_endpoint.executor&quot;: &quot;Run&quot;,
+    &quot;Python.llm_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.summarizer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.summarizer_node.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_basic_summary.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/nodes" />
@@ -189,8 +184,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.summarizer_node" />
         <item itemvalue="Python.agent_service" />
+        <item itemvalue="Python.summarizer_node" />
         <item itemvalue="Python.test_basic_summary" />
         <item itemvalue="Python.llm_client" />
       </list>

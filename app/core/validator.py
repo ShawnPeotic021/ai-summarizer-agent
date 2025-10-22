@@ -1,19 +1,14 @@
 #validator.py
-import json, re
+from langchain_core.output_parsers import PydanticOutputParser
+from app.core.summary_schema import SummarySchema
+
+#initialize the parser
+parser = PydanticOutputParser(pydantic_object = SummarySchema)
 
 def validate_summary(raw_output: str):
-    clean = re.sub(r"```(?:json)?|```", "", raw_output).strip()
-
-    # Extract first JSON block if present
-    match = re.search(r"\{.*\}", clean, re.DOTALL)
-    if match:
-        clean = match.group(0)
-
-    # Try parsing JSON safely
     try:
-        parsed = json.loads(clean)
-        parsed["valid"] = True
-    except json.JSONDecodeError:
-        parsed = {"summary": raw_output, "valid": False}
-
-    return parsed
+        verified_output = parser.parse(raw_output).model_dump()
+        return {"summary": verified_output, "valid": True}
+    except Exception as e:
+        print("⚠️ Schema parsing failed:", e)
+        return {"summary": raw_output, "valid": False}
