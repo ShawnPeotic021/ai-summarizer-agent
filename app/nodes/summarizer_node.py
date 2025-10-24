@@ -1,6 +1,5 @@
-from textwrap import dedent
-from langchain_core.prompts import ChatPromptTemplate
-from app.core.llm_client import summarize_text
+#from app.core.llm_client import summarize_text
+from app.core.llm_client_local import summarize_text
 
 SYSTEM_PROMPT = """
 You are an AI summarization assistant for customer support.

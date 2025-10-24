@@ -1,7 +1,8 @@
+from colorama import Fore,Style
 from rich import print_json
 
 from app.core.graph_builder import build_graph,Context
-
+import time
 transcript1 = '''
     Agent: Hi Emma, how are you finding your Basic Plan?
     Customer: It’s fine, but I wish it had more storage.
@@ -21,8 +22,6 @@ transcript3 = '''
     Agent: I'm sorry to hear that. May I offer you free access for 3 months?
     Customer: Hold on.
     Agent: Sure.
-    Customer: Sorry, I still want to cancel it.
-    Agent: Sure.
     '''
 
 def run_agent():
@@ -32,6 +31,8 @@ def run_agent():
 
     # Run agent
     # `thread_id` is a unique identifier for a given conversation.
+
+    start_time = time.time()
 
     response = summarizer_agent.invoke(
         {"transcript": transcript3},
@@ -44,5 +45,8 @@ def run_agent():
     print("✅ Final structured result:")
     print_json(data=clean_summary,indent=2)
 
-
+    end_time = time.time()
+    elapsed = end_time - start_time
+    print("\n")
+    print(Fore.LIGHTMAGENTA_EX + f"⏱️ Execution time: {elapsed:.2f} seconds" + Style.RESET_ALL)
 
