@@ -8,17 +8,17 @@
 
 ---
 
-## 🚀 Features
+##  Features
 
-* 🗣️ Summarizes chat or voice transcripts
-* 🧩 Extracts: `customer_name`, `product`, `reason`, `notes`, `summary`
-* 🧠 Understands **final decisions** (cancel / retain / upgrade)
-* ✅ Outputs **valid JSON only** (checked by Validator Node)
-* ⚙️ Easy to extend with RAG, CRM webhooks, or databases
+* Summarizes chat or voice transcripts
+* Extracts: `customer_name`, `product`, `reason`, `notes`, `summary`
+* Understands **final decisions** (cancel / retain / upgrade)
+* Outputs **valid JSON only** (checked by Validator Node)
+* Easy to extend with RAG, CRM webhooks, or databases
 
 ---
 
-## 🧱 Architecture
+## Architecture
 
 ```
 User → FastAPI endpoint (/summarize)
@@ -32,7 +32,7 @@ Structured result → DB / CRM (optional)
 
 ---
 
-## 🧠 Example
+## Example
 
 **Input:**
 
@@ -57,7 +57,7 @@ Customer: That sounds good.
 
 ---
 
-## ⚙️ Setup
+## Setup
 
 ```bash
 git clone https://github.com/ShawnPoetic021/ai-summarizer-agent.git
@@ -69,7 +69,7 @@ uvicorn main:app --reload
 
 ---
 
-## 🧩 Core Prompt
+## Core Prompt
 
 ```text
 You are an AI summarization assistant for customer support.
