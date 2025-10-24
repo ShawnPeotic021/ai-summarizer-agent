@@ -24,9 +24,9 @@
 User → FastAPI endpoint (/summarize)
         ↓
 Summarizer Node (LLM)
-        ↓
-Validator Node (JSON check)
-        ↓
+        ↓  ↑  (if invalid, go back to Summarizer)
+Validator Node (JSON check) 
+        ↓ (pass validation)
 Structured result → DB / CRM (optional)
 ```
 
@@ -137,17 +137,6 @@ Example3
       "summary": "Customer is considering the offer and has not made a final decision about cancelling the service."
     }
 ```
-
----
-
-## Roadmap
-
-* [x] Summarization API
-* [x] JSON validation
-* [ ] PostgreSQL / CRM integration
-* [ ] RAG knowledge augmentation
-* [ ] Cloud deployment (Render / AWS / Railway)
-
 ---
 
 **MIT License © 2025 [Shawn Wang](https://github.com/ShawnPoetic021)**
