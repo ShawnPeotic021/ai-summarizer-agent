@@ -1,9 +1,15 @@
 #validator.py
+import time
+start = time.time()
+print("Before")
 from langchain_core.output_parsers import PydanticOutputParser
-from app.core.summary_schema import SummarySchema
+from app.schemas.summary_schema import SummarySchema
 
 #initialize the parser
 parser = PydanticOutputParser(pydantic_object = SummarySchema)
+end = time.time()
+print(f"after:{end -start: .5f} ")
+
 
 def validate_summary(raw_output: str):
     try:

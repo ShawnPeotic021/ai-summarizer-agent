@@ -1,5 +1,7 @@
-from app.services.agent_service import run_agent
+#main.py
+from fastapi import FastAPI
+from app.routes.summarizer_api import router as summarizer_router
 
-if __name__ == "__main__":
+app = FastAPI(title ="AI Summmarizer API")
+app.include_router(summarizer_router)
 
-    run_agent()

@@ -1,5 +1,5 @@
 #from app.core.llm_client import summarize_text
-from app.core.llm_client_local import summarize_text
+from app.core.summarizer import summarize_text
 
 SYSTEM_PROMPT = """
 You are an AI summarization assistant for customer support.
@@ -16,10 +16,17 @@ Rules:
 5) Determine FINAL OUTCOME using this rubric:
    - If the customer says “okay”, “keep”, “let’s stay”, or similar → service is kept.
    - If they say “cancel”, “end”, or explicitly refuse → service is cancelled.
-   - Phrases like “might cancel” or “let me think” do NOT mean cancellation.
+   - Phrases like “might cancel” or “let me think” or "hold on" or "one second" do NOT mean cancellation.
+   - The customer suddenly disappears ( availability is uncertain) usually do NOT mean cancellation.
 6) Be concise and accurate.
 7) Use natural, human phrasing in "summary"
    (e.g., “accepted retention offer and kept the service” instead of “declined cancellation offer”).
+8) If a field (like "reason") cannot be clearly identified from the transcript, 
+return it as "unknown" instead of guessing or inferring.
+9) If the transcript does NOT contain an explicit explanation for the "reason",
+set "reason": "unknown" and do NOT invent phrases like “due to” or “because.”
+10) If you reference a reason, it must be verbatim or directly quoted from the transcript (e.g., "reason": "customer said they want to cancel").
+Never create unseen details such as "due to lack of support" or "because of pricing" unless those exact words appear in the transcript.
 
 Example1:
     Agent: Hi Emma, how are you finding your Basic Plan?
@@ -47,7 +54,7 @@ Example2:
     {
       "customer_name": "Jane",
       "product": "Basic Plan",
-      "reason": "wanted more storage but accepted upgrade",
+      "reason": "costumer wanted more storage",
       "notes": ["offered Plus Plan with 200GB more for $5 extra", "customer accepted; service not cancelled"],
       "summary": "Customer accepted the upgrade to Plus Plan and kept the service."
     }
@@ -62,12 +69,30 @@ Example3
     {
       "customer_name": "Jay",
       "product": "Starter Package",
-      "reason": "considering cancellation",
+      "reason": "unknown (customer only said they want to cancel, no reason given)"
       "notes": ["offered 3 months free access", "customer undecided; service not yet cancelled"],
       "summary": "Customer is considering the offer and has not made a final decision about cancelling the service."
     }
-"""
+    
+Example4
+    Agent: Hi Thomas, I see you’re currently on the Premium Package.
+    Customer: Yes, but I’d like to cancel my service.
+    Agent: I’m sorry to hear that. How about I offer you 3 months of free access to see if that helps?
+    Agent: Are you still there, Thomas?
+    
+    Expected Output:
+    {
+      "customer_name": "Thomas",
+      "product": "Premium Package",
+      "reason": "unknown (customer only said they want to cancel)",
+      "notes": [
+        "offered 3 months of free access",
+        "customer not available; service cancellation not confirmed"
+      ],
+    "summary": "Customer requested cancellation, but agent offered a retention offer and the customer's availability is uncertain."
+    }
 
+"""
 
 def summarize_node(state):
     print("🟢 Running node: Summarize_node")

@@ -1,26 +1,30 @@
+#app.core.graph_builder.py
 import json
 from dataclasses import dataclass
+
 
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.constants import END
 from langgraph.graph import StateGraph
 
-from app.nodes.validator_node import validator_node
+
 from app.nodes.summarizer_node import summarize_node
+from app.nodes.validator_node import validator_node
 
 from typing import TypedDict
 
-# --- Define workflow state schema ---
+
+# --- Define workflow state schemas ---
 class GraphState(TypedDict):
     transcript: str
     summary: str | None
     validated_summary: dict | None
     valid: bool | None
 
-# Define context schema
+# Define context schemas
 @dataclass
 class Context:
-    """Custom runtime context schema."""
+    """Custom runtime context schemas."""
     user_id: str
 
 def should_retry(state: dict) -> str:
