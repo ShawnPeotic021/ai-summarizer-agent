@@ -1,6 +1,6 @@
 import requests
 import os
-from app.core.summary_schema import SummarySchema
+from app.schemas.summary_schema import SummarySchema
 
 CRM_URL = os.getenv("CRM_API_URL")  # e.g. "https://crm.example.com/api/summaries"
 

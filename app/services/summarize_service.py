@@ -45,7 +45,9 @@ def summarize_from_transcript(transcript: str, user_id: str = "1"):
     config = {"configurable": {"thread_id": "1"}}
 
     elapsed_01 = end_time_01 - start_time_01
-    print(Fore.LIGHTMAGENTA_EX + f"Graph building time {elapsed_01: .6f}" + Style.RESET_ALL)
+
+    print("\n")
+    print(Fore.LIGHTMAGENTA_EX + f"Agent Graph has been built" + Style.RESET_ALL)
     # Run agent
     # `thread_id` is a unique identifier for a given conversation.
 

@@ -1,5 +1,10 @@
+import json
+
 from fastapi import APIRouter, UploadFile, File
 from fastapi.responses import JSONResponse
+from rich import print_json
+from colorama import Fore,Style
+
 from striprtf.striprtf import rtf_to_text
 
 from app.services.summarize_service import summarize_from_transcript

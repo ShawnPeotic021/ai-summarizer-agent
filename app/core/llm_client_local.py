@@ -2,7 +2,7 @@
 import requests, json
 from colorama import Fore,Style
 
-MODEL = "llama3.2:3b"   # or any local model you pulled
+MODEL = "llama3.2:1b"   # or any local model you pulled
 
 print(Fore.LIGHTMAGENTA_EX + "Current Model: " ,  MODEL + Style.RESET_ALL)
 

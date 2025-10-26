@@ -42,12 +42,13 @@ def build_graph():
         {"validator->end": END, "validator->summarizer": "summarizer"}
     )
 
+    '''
     print("📘 Graph structure:")
     print(json.dumps({
         "nodes": list(graph.nodes),
         "edges": [list(e) for e in graph.edges],
     }, indent=2))
     print("\n")
-
+    '''
     checkpointer = InMemorySaver()
     return graph.compile(checkpointer=checkpointer)

@@ -5,6 +5,7 @@ from typing import List
 class SummarySchema(BaseModel):
     customer_name: str
     product: str
+    event: str
     reason: str
     notes:List[str]
     summary: str

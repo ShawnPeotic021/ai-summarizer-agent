@@ -23,5 +23,5 @@ def summarize_text(system_prompt: str, transcript: str):
             if "message" in data and "content" in data["message"]:
                 full_response += data["message"]["content"]
 
-    print(f"full_reponse: {full_response} + {type(full_response)}")
+    #print(f"full_reponse: {full_response} + {type(full_response)}")
     return full_response.strip()

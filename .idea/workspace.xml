@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff2a38d3-15e1-4f37-8f07-c78456d2c8a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/routes/summarizer_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/storage_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/prompts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/graph_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/graph_builder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/llm_client_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/llm_client_local.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/summarizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/summarizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/summary_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/summary_schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/validator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nodes/summarizer_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nodes/summarizer_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/agent_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/summarize_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/summarizer_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/summarizer_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/summary_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/summary_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/storage_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/storage_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/summarize_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/summarize_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
