@@ -1,6 +1,6 @@
 # ai-summarizer-agent
 
-> Turn messy support conversations into clean, structured JSON summaries — powered by LLMs, FastAPI, and LangGraph.
+> Turn messy customer support conversations into clean, structured JSON summaries — powered by LLMs, FastAPI, and LangGraph.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-brightgreen?logo=fastapi)
